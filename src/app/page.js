@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className="header">
-        <h1 className={styles.header}>Bj&ouml;rn's Radio</h1>
+        <h1 className={styles.header}>Bj&ouml;rn&apos;s Radio</h1>
       </div>
 
       <div>
@@ -17,7 +17,7 @@ export default function Home() {
       <div className={styles.description}>
         <h2>About</h2>
         <p>
-          Bj&ouml;rn's Radio is a radio for persons called Bj&ouml;rn and live in
+          Bj&ouml;rn&apos;s Radio is a radio for persons called Bj&ouml;rn and live in
           flat on Torggatan 4. ;-)
         </p>
         <p>This application was created to learn how to use React (and Next.js).</p>
