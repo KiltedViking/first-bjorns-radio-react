@@ -1,3 +1,14 @@
+# first-bjorns-radio-react
+
+This is my first try at creating a React, or rather Next.js, client to run against by ASP.NET Core Web API project BjornsRadioCore80.
+
+Initial commit uses static data for albums and songs.
+
+Björn G. D. Persson, kiltedviking.net
+
+---
+(Below is original content of README.md when scaffolding project using create-next-app.)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

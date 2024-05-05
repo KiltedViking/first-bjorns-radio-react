@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from "next/link";
 import styles from "./page.module.css";
 import AlbumList from "@/components/AlbumList";
@@ -35,28 +35,36 @@ export default function Albums() {
             "id": 1,
             "albumid": 1,
             "albumOrder": 1,
-            "title": "New Gold Dream"
+            "title": "Someone, Somewhere in Sumemrtime"
         },
         {
             "id": 2,
             "albumid": 1,
             "albumOrder": 2,
-            "title": "New Gold Dream"
+            "title": "Colours Fly and Catherine Wheel"
         },
         {
             "id": 3,
             "albumid": 2,
             "albumOrder": 1,
+            "title": "1999"
+        },
+        {
+            "id": 4,
+            "albumid": 2,
+            "albumOrder": 2,
             "title": "Little Red Corvette"
         },
     ]
 
-    // TODO: Change to state and implement SongList compontent
-    let songs = [];
+    const [songsFiltered, setSongsFiltered] = useState([]);
 
-    const handleClickAlbum = function(key) {
-        songs = songData.filter((album) => album.albumid === key);
-        console.log(songs);
+    useEffect(() => {
+        setSongsFiltered([]);
+    }, []);
+
+    const handleClickAlbum = function(albumId) {
+        setSongsFiltered(songData.filter((song) => song.albumid === albumId));
     }
 
     return (
@@ -65,7 +73,9 @@ export default function Albums() {
             <h1 className={styles.heading}>Albums</h1>
             <AlbumList albumList={albumData} albumClickHandler={handleClickAlbum} />
             <h2 className={styles.heading}>Songs</h2>
-            <SongList songList={songs} />
+            {/* <Suspense fallback={<div>Loading...</div>}> */}
+                <SongList songList={songsFiltered} />
+            {/* </Suspense> */}
         </main>
     )
 }

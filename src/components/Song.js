@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Song() {
+export default function Song({song}) {
   return (
-    <div>Song</div>
+    <li key={song.id}>{song.albumOrder}. {song.title}</li>
   )
 }
