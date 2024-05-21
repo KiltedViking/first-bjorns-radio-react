@@ -70,12 +70,13 @@ export default function Albums() {
     return (
         <main className={styles.main}>
             <Link href="./">Home</Link>
+
             <h1 className={styles.heading}>Albums</h1>
+            <p className={styles.text}>Click album to display its songs.</p>
             <AlbumList albumList={albumData} albumClickHandler={handleClickAlbum} />
+
             <h2 className={styles.heading}>Songs</h2>
-            {/* <Suspense fallback={<div>Loading...</div>}> */}
-                <SongList songList={songsFiltered} />
-            {/* </Suspense> */}
+            <SongList songList={songsFiltered} />
         </main>
     )
 }
